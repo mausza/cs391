@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="projects.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <script src="calculator.js" defer></script> <!-- JavaScript file for calculator logic -->
+    <title>Projects | Resume</title>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <h1>Mauricio's Resume</h1>
+        <h3>Computer Science Student At Boston University</h3>
+    </header>
+
+    <div id="home_container">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../education/education.html">Education</a></li>
+                <li><a href="../experience/experience.html">Experience</a></li>
+                <li><a href="../projects/projects.html">Projects</a></li>
+                <li><a href="../coursework/coursework.html">Supplementary Coursework</a></li>
+                <li><a href="../skills/skills.html">Skills</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Projects</h1>
+            <h3>Some of the projects I have worked on:</h3>
+
+            <ul>
+                <li>
+                    <strong>AI-Powered Chatbot for Schools</strong>
+                    <p>Developed a chatbot using OpenAI’s API to answer school-related questions for students, parents, and faculty.</p>
+                </li>
+
+                <li>
+                    <strong>Multi-threaded Image Processing Server</strong>
+                    <p>Designed and built a C-based server that handles concurrent client requests for image transformations.</p>
+                </li>
+
+                <li>
+                    <strong>Smart Workout Tracker</strong>
+                    <p>Built a mobile app that tracks gym workouts and suggests exercises based on past performance.</p>
+                </li>
+            </ul>
+
+            <!-- JavaScript Calculator Section -->
+            <div id="calculator">
+                <h2>JavaScript Calculator</h2>
+                <p>Enter two numbers and select an operation:</p>
+
+                <label for="first-number">First Number:</label>
+                <input type="number" id="first-number">
+
+                <label for="second-number">Second Number:</label>
+                <input type="number" id="second-number">
+
+                <div class="buttons">
+                    <button onclick="calculate('+')">+</button>
+                    <button onclick="calculate('-')">-</button>
+                    <button onclick="calculate('*')">*</button>
+                    <button onclick="calculate('/')">/</button>
+                    <button onclick="power()">**</button>
+                    <button onclick="clearFields()">Clear</button>
+                </div>
+
+                <h3 id="output"></h3>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mauricio Szajman. <a href="#">Credits</a></p>
+    </footer>
+</div>
+</body>
+</html>

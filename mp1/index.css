@@ -1,0 +1,190 @@
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    background-color: #98def8;
+}
+
+header h1{
+    margin: 0;
+    padding-top: .5vw;
+}
+
+header h3 {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 1vw;
+
+}
+
+h2{
+    margin: auto;
+    margin-top: 5vh;
+    font-size: calc(3vw + 5px);
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#home_container{
+    display: flex;
+
+
+}
+
+
+#header_content {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    padding-top: 10%;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #0197cd;
+    font-size: 3vw;
+    width: 30vw;
+}
+
+nav a {
+    margin: 5%;
+    display: block;
+    padding: 5%;
+    background-color: #29586a;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5vw;
+    font-size: calc(1vw + 5px);
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 30vw;
+    height: auto;
+    border-radius: 2vw;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+
+}
+
+
+#wrapper {
+    width: 75%;
+    margin: 0 auto;
+    background-color: #76a6ba;
+
+}
+
+
+main p {
+    font-size: calc(1vw + 5px);
+    margin-bottom: 5vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+main {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+
+footer {
+    background-color: #98def8;
+    margin: auto;
+    padding: 1vw;
+}
+
+footer a {
+    display: flex;
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: calc(4vw + 5px);
+        margin: auto;
+    }
+
+    header h3 {
+        font-size: calc(1.5vw + 5px);
+        margin: auto;
+    }
+
+    #home_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 1vw;
+        white-space: nowrap;
+        margin: auto;
+        font-size: .70em;
+    }
+
+    main h2 {
+        margin: auto;
+    }
+
+
+    main {
+        width: 100%;
+        padding: 5%;
+    }
+
+    main p {
+        font-size: calc(2vw + 5px);
+        text-align: center;
+
+    }
+
+    nav ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        padding: 0;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        padding: 3vw 0 3vw 3vw;
+    }
+}
