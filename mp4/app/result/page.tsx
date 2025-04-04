@@ -1,16 +1,19 @@
 import { fetchDefinition } from "@/lib/fetchDefinition";
 
-type Props = {
-    searchParams: { word: string };
-};
+export default async function ResultPage({
+                                             searchParams,
+                                         }: {
+    searchParams: { word?: string };
+}) {
 
-export default async function ResultPage({ searchParams }: Props) {
     const word = searchParams.word;
-    const data = await fetchDefinition(word);
+
 
     if (!word) {
         return <p className="text-center">No word provided.</p>;
     }
+
+    const data = await fetchDefinition(word);
 
     if (data.error) {
         return <p className="text-center text-red-500">{data.error}</p>;
