@@ -1,11 +1,14 @@
 import { fetchDefinition } from "@/lib/fetchDefinition";
 
-export default async function ResultPage(props: {
-    searchParams?: {
-        word?: string;
+export default async function ResultPage(props: unknown) {
+    // Cast props to the shape you expect
+    const { searchParams } = props as {
+        searchParams?: {
+            word?: string;
+        };
     };
-}) {
-    const word = props.searchParams?.word;
+
+    const word = searchParams?.word;
 
     if (!word) {
         return <p className="text-center">No word provided.</p>;
