@@ -1,7 +1,6 @@
 import { fetchDefinition } from "@/lib/fetchDefinition";
 
 export default async function ResultPage(props: unknown) {
-    // Cast props to the shape you expect
     const { searchParams } = props as {
         searchParams?: {
             word?: string;
@@ -9,17 +8,21 @@ export default async function ResultPage(props: unknown) {
     };
 
     const word = searchParams?.word;
-
     if (!word) {
         return <p className="text-center">No word provided.</p>;
     }
 
     const data = await fetchDefinition(word);
 
-    if (data.error) {
-        return <p className="text-center text-red-500">{data.error}</p>;
+    if (typeof data === "object" && data !== null && "error" in data) {
+        return <p className="text-center text-red-500">{(data as { error: string }).error}</p>;
     }
 
+    if (!Array.isArray(data) || data.length === 0 || typeof data[0] === "string") {
+        return <p className="text-center text-red-500">Word not found in the dictionary.</p>;
+    }
+
+    // 3) Now it's safe to treat data[0] as a dictionary entry
     return (
         <div className="flex flex-col items-center justify-center min-h-screen px-4">
             <div className="bg-blue-300 p-6 rounded max-w-xl w-full space-y-4">

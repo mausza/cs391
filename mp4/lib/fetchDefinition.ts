@@ -3,6 +3,8 @@
 export async function fetchDefinition(word: string) {
     if (!word) return { error: "Missing word" };
 
+
+
     const res = await fetch(
         `https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${process.env.MW_API_KEY}`
     );
