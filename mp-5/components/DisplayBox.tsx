@@ -44,8 +44,12 @@ export default function DisplayBox() {
                 setError(null);
                 setShortUrl(data.shortUrl);
             }
-        } catch (e: any) {
-            setError(e.message);
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                setError(error.message);
+            } else {
+                setError(String(error));
+            }
         }
     };
 

@@ -22,13 +22,10 @@ export async function POST(request: NextRequest) {
         const proto = request.headers.get("x-forwarded-proto") || "https";
         const shortUrl = `${proto}://${origin}/${alias}`;
         return NextResponse.json({ shortUrl }, { status: 201 });
-    } catch (err: any) {
-        const message = err instanceof Error ? err.message : "Unknown error";
-        return NextResponse.json(
-            { error: message },
-            {
-                status: message.includes("exists") ? 409 : 500,
-            }
-        );
+    } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : String(err);
+        return NextResponse.json({ error: message }, { status: 400 });
     }
+
+
 }
