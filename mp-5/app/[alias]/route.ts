@@ -5,12 +5,21 @@ export async function GET(
     request: NextRequest,
     { params }: { params: { alias: string } }
 ) {
-    const links = await getCollection(LINKS_COLLECTION);
-    const doc = await links.findOne({ shortenedURL: params.alias });
+    const { alias } = params;
+
+    const linksCollection = await getCollection(LINKS_COLLECTION);
+
+
+    const doc = await linksCollection.findOne({ shortenedURL: alias });
 
     if (!doc) {
-        return NextResponse.json({ error: "Not found" }, { status: 404 });
+        // If not found, return a 404 JSON response
+        return NextResponse.json(
+            { error: "Alias not found" },
+            { status: 404 }
+        );
     }
 
+    // Redirect the client to the original URL
     return NextResponse.redirect(doc.originalURL, 302);
 }
